@@ -47,6 +47,11 @@
 - custom event on client side and catch on server side
 - custom event on server side and catch on client side
 - Broadcasting 
-    1. io.sockets.emit -to all
-    2. socket.emit -  to sender
+    1. io.sockets.emit - to all (namespace)
+    2. socket.emit - to sender
     3. socket.broadcast.emit - to all except sender
+    4. io.emit - to all
+    5. io.broadcast.emit - to all except sender (namespace / rooms)
+- Namespaces - path - multiple connection
+    1. by default `/`
+    2. custom namespace by io.of()

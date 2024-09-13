@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Socket IO</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js" integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js"
+      integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
     <p>Socket IO</p>
 
+    <script>
+      // let socket = io()
+      // socket.on("message",(data)=>{
+      //     console.log(data)
+      // })
 
+      // socket.on("myEvent",(data)=>{
+      //     document.write(data)
+      //     document.write(data.name)
+      //     document.write(data.intelligent)
+      // })
 
-<script>
-    let socket = io()
-    // socket.on("message",(data)=>{
-    //     console.log(data)
-    // })
+      // //creating custom event
+      // socket.emit("clientEvent",{
+      //     name:"Sakib",
+      //     intelligent:false
+      // })
 
-    // socket.on("myEvent",(data)=>{
-    //     document.write(data)
-    //     document.write(data.name)
-    //     document.write(data.intelligent)
-    // })
+      // socket.on("myBroadcast",(data)=>{
+      //     document.body.innerHTML = ""
+      //     document.write(data.message)
+      // })
 
-    // //creating custom event
-    // socket.emit("clientEvent",{
-    //     name:"Sakib",
-    //     intelligent:false
-    // })
+      // socket.on("newUserConnected",(data)=>{
+      //     document.body.innerHTML = ""
+      //     document.write(data.message)
+      // })
 
-    // socket.on("myBroadcast",(data)=>{
-    //     document.body.innerHTML = ""
-    //     document.write(data.message)
-    // })
+      //custom namespace
+      let socket = io("/custom");
+      socket.on("namespace", (data) => {
+        document.body.innerHTML = "";
+        document.write(data.message);
+      });
 
-    socket.on("newUserConnected",(data)=>{
-        document.body.innerHTML = ""
-        document.write(data.message)
-    })
-
-
-</script>
-</body>
+      let socket2= io("/custom2")
+      socket2.on("namespace",(data)=>{
+        document.body.innerHTML = "";
+        document.writeln(data.message);
+      })
+      
+    </script>
+  </body>
 </html>
