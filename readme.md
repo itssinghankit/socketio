@@ -25,3 +25,5 @@
 - Not complete implementation of web sockets.
 - Engine.io
 - ws - complete implementation of web sockets
+- io is Server(socker.io) intance and all the connection disconnection and other events handled through this
+- 

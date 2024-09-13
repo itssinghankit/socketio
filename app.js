@@ -13,8 +13,8 @@ const httpServer = createServer(app)
 const io = new Server(httpServer);
 
 io.on("connection",(socket)=>{
-    console.log(socket)
-    console.log("New client connected")
+    
+    console.log("New client connected: ",socket.id)
 
 
     socket.on("disconnect",()=>{
