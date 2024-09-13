@@ -40,18 +40,27 @@
       //     document.write(data.message)
       // })
 
-      //custom namespace
-      let socket = io("/custom");
-      socket.on("namespace", (data) => {
+    //   //custom namespace
+    //   let socket = io("/custom");
+    //   socket.on("namespace", (data) => {
+    //     document.body.innerHTML = "";
+    //     document.write(data.message);
+    //   });
+
+    //   let socket2= io("/custom2")
+    //   socket2.on("namespace",(data)=>{
+    //     document.body.innerHTML = "";
+    //     document.writeln(data.message);
+    //   })
+
+    //rooms
+    let socket = io()
+    socket.on("connectedRoom",(data)=>{
         document.body.innerHTML = "";
         document.write(data.message);
-      });
+    
+    })
 
-      let socket2= io("/custom2")
-      socket2.on("namespace",(data)=>{
-        document.body.innerHTML = "";
-        document.writeln(data.message);
-      })
       
     </script>
   </body>

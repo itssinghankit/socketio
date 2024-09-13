@@ -82,6 +82,47 @@ const io = new Server(httpServer);
 //     })
 // })
 
+//ALL CONNECTED TO SAME ROOM
+// let roomno=1
+// io.on("connection",(socket)=>{
+
+//     console.log("new user connected..")
+
+//     socket.join(`room-${roomno}`)
+
+//     io.sockets.in(`room-${roomno}`).emit("connectedRoom",{message:"you are connected to room :"+roomno})
+
+//     socket.in(`room-${roomno}`).emit("connectedRoom",{message:"hello from room :"+roomno})
+
+//     socket.on("disconnect",()=>{
+//         console.log("disconnected...")
+//     })
+// })
+
+//multiple rooms with limit
+let roomno=1
+let full=0
+io.on("connection",(socket)=>{
+
+    console.log("new user connected..")
+    full++
+    if(full>2){
+        full=0
+        roomno++
+    }
+
+    socket.join(`room-${roomno}`)
+
+    io.sockets.in(`room-${roomno}`).emit("connectedRoom",{message:"you are connected to room :"+roomno})
+
+    socket.in(`room-${roomno}`).emit("connectedRoom",{message:"hello from room :"+roomno})
+
+    socket.on("disconnect",()=>{
+        
+        console.log("disconnected...")
+    })
+})
+
 app.get("/", (req, res) => {
 
     res.sendFile(path.join(__dirname, "index.html"))
