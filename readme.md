@@ -58,3 +58,8 @@
 - `Rooms` - multiple channels with same namespace
     1. socket.join("`room_name`")
     2. io.sockets.in("`room_name`").emit("`event`",{data})
+- `Error handling` on client side with events:
+    1. connect_failed
+    2. reconnect
+    3. reconnect_failed
+    4. error

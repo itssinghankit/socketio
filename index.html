@@ -61,6 +61,20 @@
     
     })
 
+    //error handling
+    socket.on("connect_failed",()=>{
+        alert("Connection failed")
+    })
+    socket.on("reconnect",()=>{
+        alert("Reconnected")
+    })
+    socket.on("reconnect_failed",()=>{
+        alert("Reconnection failed")
+    })
+    socket.on("error",()=>{
+        alert("error")
+    })
+
       
     </script>
   </body>
