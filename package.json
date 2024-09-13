@@ -2,9 +2,11 @@
   "name": "socketio",
   "version": "1.0.0",
   "description": "- Persisting protocols\r - Web sockets - TCP based independent protocol\r - Long polling and SSE(Server sent events) based on HTTP\r - Socket.IO",
-  "main": "index.js",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
