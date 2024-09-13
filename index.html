@@ -11,6 +11,33 @@
 
 <script>
     let socket = io()
+    // socket.on("message",(data)=>{
+    //     console.log(data)
+    // })
+
+    // socket.on("myEvent",(data)=>{
+    //     document.write(data)
+    //     document.write(data.name)
+    //     document.write(data.intelligent)
+    // })
+
+    // //creating custom event
+    // socket.emit("clientEvent",{
+    //     name:"Sakib",
+    //     intelligent:false
+    // })
+
+    // socket.on("myBroadcast",(data)=>{
+    //     document.body.innerHTML = ""
+    //     document.write(data.message)
+    // })
+
+    socket.on("newUserConnected",(data)=>{
+        document.body.innerHTML = ""
+        document.write(data.message)
+    })
+
+
 </script>
 </body>
 </html>

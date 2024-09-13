@@ -26,4 +26,27 @@
 - Engine.io
 - ws - complete implementation of web sockets
 - io is Server(socker.io) intance and all the connection disconnection and other events handled through this
-- 
+- cdn and io() script in html code
+
+### Server side events
+1. connection
+2. disconnect
+3. message
+4. reconnect
+5. ping
+6. join
+7. leave
+
+### Client side events
+1. connect
+2. disconnect
+3. 
+4.
+
+- socket.send() - server, "message" event on client
+- custom event on client side and catch on server side
+- custom event on server side and catch on client side
+- Broadcasting 
+    1. io.sockets.emit -to all
+    2. socket.emit -  to sender
+    3. socket.broadcast.emit - to all except sender
