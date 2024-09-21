@@ -40,8 +40,6 @@
 ### Client side events
 1. connect
 2. disconnect
-3. 
-4.
 
 - socket.send() - server, "message" event on client
 - custom event on client side and catch on server side
